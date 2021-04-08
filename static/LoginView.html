@@ -1,0 +1,52 @@
+<html>
+<head>
+	<title>OMNO Dashboard Login</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+	<label for="username">Username: </label>
+	<input id="username" type="text" name="username">
+	<br/>
+	<label for="password">Password: </label>
+	<input id="password" type="password" name="password">
+	<br/>
+	<button type="button" onclick="login()">Log in</button>
+	<script>
+		function login() {
+			let username = document.getElementById("username").value
+			let password = document.getElementById("password").value
+			
+			$.post('/login', {username: username, password: password}, (data, statusText, xhr) => {
+				if (xhr.status == 200) {
+					location.reload()
+				} else {
+					console.log(xhr.status)
+					console.log(statusText)
+				}
+			})
+
+			/*
+			req = new XMLHttpRequest()
+			req.addEventListener("load", function() {
+				console.log(this.responseText)
+				console.log(this)
+				if (this.status == 200) {
+					location.reload()
+				} else {
+					alert("Invalid username or password")
+				}
+			})
+			req.open("POST", "/login")
+			console.log(username)
+			console.log(password)
+			req.setRequestHeader("Content-Type", "multipart/form-data")
+			req.send(JSON.stringify({
+				"username": username,
+				"password": password
+			}))*/
+		}
+	</script>
+</body>
+</html>
