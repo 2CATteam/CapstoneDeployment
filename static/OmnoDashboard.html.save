@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="/static/css/fontawesome.min.css" rel="stylesheet">
+<link href="/static/css/fontawesome.css" rel="stylesheet">
+<link href="/static/css/solid.css" rel="stylesheet">
+<link rel="stylesheet" href="/static/css/styles.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment-with-locales.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.bundle.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.7.0/d3.min.js"></script>
+<script src="/static/Capstone.js"></script>
+
+</head>
+<body>
+
+
+<div class="tab">
+  <button><i class='icon'></i></button>
+  <button class="tablinks" onclick="openTab(event, 'Home')" id="defaultOpen"><i class="fa fa-home fa-lg"></i></button>
+  <button class="tablinks" onclick="openTab(event, 'Search')"><i class="fa fa-search fa-lg"></i></button>
+  <button class="tablinks" onclick="openTab(event, 'Empty')"><i class='fas fa-user-alt fa-lg'></i></button>
+  <button class="tablinks" onclick="openTab(event, 'Empty')"><i class='fas fa-calendar-alt fa-lg'></i></button>
+  <button class="tablinks" onclick="openTab(event, 'Empty')"><i class='fa fa-file-medical fa-lg'></i></button>
+  <button class="tablinks" onclick="openTab(event, 'Empty')"><i class='fas fa-sign-out-alt fa-lg'></i></button>
+</div>
+
+<div id="LandingPage" class="tabcontent">
+  <h3>London</h3>
+  <p>London is the capital city of England.</p>
+</div>
+
+<div id="Home" class="tabcontent">
+  <div class="opqic">
+    <img id="myImg" src="/static/icons/opqic-big.jpg" alt="Snow">
+  </div>
+
+  <button class="motherBtn"><img src="/static/icons/motherIcon.png"></button>
+  <button class="infantBtn"><img src="/static/icons/infantIcon.png"></button>
+  
+</div>
+
+<div id="Search" class="tabcontent">
+  <div class="opqic">
+    <img id="myImg" src="/static/icons/opqic-big.jpg" alt="Snow">
+  </div>
+  
+  
+  <div class="search-container">
+    <form action="/action_page.php">
+      <input type="text" placeholder="Search maternal data..." name="search">
+      <button type="submit"><i class="fa fa-search"></i></button>
+    </form>
+  </div>
+
+  <div id="buttonParent">
+	<!--
+    <button class="accordion">Average Length of stay for newborns with Neonatal Abstinence Syndrome (NAS)</button>
+    <div class="panel">
+      <p>Lorem ipsum...</p>
+    </div>
+  
+    <button class="accordion">Percent of OEN who had NAS symptoms</button>
+    <div class="panel">
+      <p>Lorem ipsum...</p>
+    </div>
+    
+    
+      <button class="accordion">Toxicology results breakdown</button>
+    <div class="panel">
+      <p>Lorem ipsum...</p>
+    </div>
+    
+    
+    <button class="accordion">Percent of women with OUD during pregnancy who received medication-assisted treatment</button>
+    <div class="panel">
+    
+        <p style="text-align: center;">This Year's Average</p>
+        <canvas id="p1Line" width="100px" height="15px"></canvas>
+        <p style="text-align: center;">This Week's Average</p>
+        <canvas id="p1Bar" width="100" height="15"></canvas>
+        <script>
+    
+    //Year's Average line graph
+    //Array of Months, Array of Your Percent, Array of All Percent, String Your hospital, String All Hospitals
+    BuildP1Line(["January", "February", "March", "April"], [23, 12, 52, 35],[26, 24, 45, 32], "Your Hospital","All Hospitals");
+    
+    //Week's Average Bar Graph
+    //Array of Hospital names (X axis), Array of percentages, String Hospitals
+    BuildP1Bar(["Hospital 1", "Hospital 2", "Hospital 3", "Hospital 4"],[26, 24, 45, 32], "Hospitals");
+        </script>
+     
+                  
+    </div>
+    
+    <button class="accordion">Percentage with DHS contacted</button>
+    <div class="panel">
+      <p>Lorem ipsum...</p>
+    </div>
+    
+    <button class="accordion">Percent of pregnant women with OUD screening for STI during pregnancy</button>
+    <div class="panel">
+      
+    <canvas id="myChart" width="100" height="30"></canvas>
+    <script>
+      
+      BuildSingle(["Michael Asante", "Daniel Royer", "Brandon", "Mike"], [50,24,25,25,25], "Hello");
+    
+    </script>
+      
+    </div>
+    
+    
+    <button class="accordion">Percent of OEN who go home to biological mother</button>
+    <div class="panel">
+      <p>Lorem ipsum...</p>
+    </div>    
+    -->
+  </div>
+</div>
+  
+ 
+
+<div id="Empty" class="tabcontent">
+  <h3>Empty</h3>
+  <p>Put something in me</p>
+</div>
+
+<script>
+  //JS Code for Tab Navigation
+    var acc = document.getElementsByClassName("accordion");
+    var i;
+    
+    for (i = 0; i < acc.length; i++) {
+      acc[i].addEventListener("click", function() {
+        this.classList.toggle("activeAccordion");
+        var panel = this.nextElementSibling;
+        if (panel.style.maxHeight) {
+          panel.style.maxHeight = null;
+        } else {
+          panel.style.maxHeight = panel.scrollHeight + "px";
+        } 
+      });
+    }
+
+function openTab(evt, cityName) {   //JS Code for Tab Navigation
+132     var acc = document.getElementsByClassName("accordion");
+133     var i;
+134
+135     for (i = 0; i < acc.length; i++) {
+136       acc[i].addEventListener("click", function() {
+137         this.classList.toggle("activeAccordion");
+138         var panel = this.nextElementSibling;
+139         if (panel.style.maxHeight) {
+140           panel.style.maxHeight = null;
+141         } else {
+142           panel.style.maxHeight = panel.scrollHeight + "px";
+143         }
+144       });
+145     }
+
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>
+   
+</body>
+</html> 

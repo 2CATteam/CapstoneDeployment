@@ -1,2 +1,5 @@
 users.db
-data.db
+records.db
+env.py
+__pycache__/
+venv/

@@ -1,0 +1,106 @@
+{
+	"Measure_1": {
+		"title": "Length of stay for newborns with NAS",
+		"description": "Average length of stay for newborns with Neonatal Abstinence Syndrome (NAS)",
+		"graphType": "A",
+		"yLabel": "Hospital Days"
+	},
+
+	"Measure_2": {
+		"title": "Percent of OENs requiring pharmacologic therapy",
+		"description": null,
+		"graphType": "A"
+	},
+
+	"Measure_3": {
+		"title": "Number of days of pharmacological treatment for babies with NAS",
+		"description": null,
+		"graphType": "A"
+	},
+
+	"Measure_4": {
+		"title": "Percent of OEN who had NAS symptoms",
+		"description": null,
+		"graphType": "A"
+	},
+	"Measure_5": {
+		"title": "Toxicology results breakdown – moms and infants",
+		"description": null,
+		"graphType": "A"
+	},
+	"Measure_6": {
+		"title": "Women with OUD during pregnancy with MAT/BHT",
+		"description": "Percent of women with OUD during pregnancy who receive medication assisted treatment MAT or behavioral health treatment",
+		"graphType": "C"
+	},
+	"Measure_7": {
+		"title": "Percent with DHS contacted",
+		"description": null,
+		"graphType": "A"
+	},
+	"Measure_8": {
+		"title": "Percent who roomed together with mother - any",
+		"description": "Percent of OEN who roomed together with mother for ANY length of time during hospitalization",
+		"graphType": "A"
+	},
+	"Measure_9": {
+		"title": "Percent who roomed together with mother - 50%",
+		"description": "Percent of OEN who roomed together with mother during at least 50% of hospitalization",
+		"graphType": "A"
+	},
+	"Measure_10": {
+		"title": "Percent receiving mother's milk at discharge",
+		"description": null,
+		"graphType": "A"
+	},
+	"Measure_11": {
+		"title": "Percent of OEN who go home to biological mother",
+		"description": null,
+		"graphType": "A"
+	},
+	"Measure_12": {
+		"title": "Percent of with appropriate follow-up at discharge (Early intervention)",
+		"description": null,
+		"graphType": "A"
+	},
+	"Measure_13": {
+		"title": "Percent with PCP identified at follow-up",
+		"description": "Percent of OEN who had PCP Identified with a follow-up appointment at discharge",
+		"graphType": "A"
+	},
+	"Measure_14": {
+		"title": "Percent of infants tested for Hep. C",
+		"description": null,
+		"graphType": "A"
+	},
+	"Measure_15": {
+		"title": "Percent screened for STI during pregnancy",
+		"description": "Percent of pregnant women with OUD screened for STI during pregnancy",
+		"graphType": "A"
+	},
+	"Measure_16": {
+		"title": "Percent receiving prenatal pediatric consult",
+		"description": "Percent of mothers with OUD receiving prenatal pediatric consult",
+		"graphType": "A"
+	},
+	"Measure_17": {
+		"title": "Calculated MME",
+		"description": null,
+		"graphType": "A"
+	},
+	"Measure_18": {
+		"title": "First line medication used",
+		"description": null,
+		"graphType": "A"
+	},
+	"Measure_19": {
+		"title": "Average difference between discharge dates",
+		"description": "Average difference between date medically ready for discharge and actual date of discharge",
+		"graphType": "A"
+	},
+	"Measure_20": {
+		"title": "Assessment type used",
+		"description": null,
+		"graphType": "A"
+	}
+}
