@@ -12,18 +12,19 @@ function BuildLine(months, yourPercent, allPercent, canvas) { //Can use any othe
 		fill: false,
 		data: yourPercent, //Array of percentages
 		backgroundColor: ['rgb(54, 162, 235)',
-		'rgb(54, 162, 235)',
-		'rgb(54, 162, 235)',
-		'rgb(54, 162, 235)',
-		'rgb(54, 162, 235)',
-		'rgb(54, 162, 235)',
-		'rgb(54, 162, 235)',
-		'rgb(54, 162, 235)',
-		'rgb(54, 162, 235)',
-		'rgb(54, 162, 235)',
-		], pointBackgroundColor: "rgb(0,0,0)",
-		 pointBorderColor: "rgb(237,199,134)",
-		 borderColor: "rgb(75,192,192)",
+        'rgb(54, 162, 235)',
+        'rgb(54, 162, 235)',
+        'rgb(54, 162, 235)',
+        'rgb(54, 162, 235)',
+        'rgb(54, 162, 235)',
+        'rgb(54, 162, 235)',
+        'rgb(54, 162, 235)',
+        'rgb(54, 162, 235)',
+        'rgb(54, 162, 235)',
+      ],
+		 pointBackgroundColor: "rgb(0,0,0)",
+		 pointBorderColor: "rgb(221,61,63)",
+		 borderColor: "rgb(255,50,50)",
 		 borderWidth: 3
 	}, {
 		label: "All", // Name the series
@@ -40,8 +41,8 @@ function BuildLine(months, yourPercent, allPercent, canvas) { //Can use any othe
 		'rgb(54, 162, 235)',
 		'rgb(54, 162, 235)',
 		], pointBackgroundColor: "rgb(0, 0, 0)",
-		 pointBorderColor: "rgb(221, 61, 63)",
-		 borderColor: "rgb(255,50,50)",
+		pointBorderColor: "rgb(237,199,134)",
+		  borderColor: "rgb(75,192,192)",
 		 backgroundColor: 'rgba(0, 0, 0, 1)',
 		 borderWidth: 3,
 
@@ -376,9 +377,9 @@ function createButtons() {
 			}
 		})
 	}).fail(() => {
-		alert("Urbadkid")
+		alert("Error getting data from server. Is your token valid?")
 	})
-	}
+}
 
 
 function roundList(list, places) {
@@ -388,6 +389,44 @@ function roundList(list, places) {
 	return list
 }
 
-$(document).ready(() => {
+$(document).ready(async () => {
 	createButtons();
+	createAdminTable();
 })
+
+function createAdminTable() {
+	if (getCookie("admin") !== "True") {
+		return
+	}
+	let toMove = $("#Account .centerChild .accountCard").detach()
+	$("#Account .centerChild").addClass("hidden")
+	$("#Account .flexColumn").removeClass("hidden")
+	$("#Account .flexColumn").prepend(toMove)
+
+	
+}
+
+function logout() {
+	document.cookie = "token="
+	location.reload()
+}
+
+function changePassword() {
+	window.location.href = `/resetPassword?token=${getCookie("token")}${getCookie("admin") == "True" ? "&admin=True" : ""}`
+}
+
+function getCookie(key) {
+	obj = {}
+	list = document.cookie.split(";")
+	for (x in list) {
+		if (list[x]) {
+			pair = list[x].split("=", 2)
+			obj[pair[0].trim()] = pair[1].trim()
+		}
+	}
+	return obj[key]
+}
+
+function setCookie(key, value) {
+	document.cookie = `${key}=${value}`
+}

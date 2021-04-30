@@ -740,6 +740,8 @@ def measure_helper_per_hos_per_quarter(cursor, date1, date2):
     results = cursor.fetchall()
     record_count = results[0][0]
 
+    print(hos_ids)
+
     statistics = {'hospital_id': hos_ids,
                   'num_records': record_count,
                   'measure_1': nas_stay_length, 'measure_2': oens_requiring_pharmacologic_therapy,
@@ -922,5 +924,3 @@ def get_measures():
 
 stat = get_measures()
 print(stat)
-
-

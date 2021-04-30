@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>OMNO Dashboard Login</title>
+	<title>OMNO Account Creation</title>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,43 +19,58 @@
         </header>
     
         <main>
+        	
             <div class="username">
                 <input id="username" type="text" name="username" placeholder="User ID">
             </div>
             <div>
+              	<p>Choose a password:</p>
                 <input id="password" type="password" name="password" placeholder="Password">
             </div>
             <div>
-                <button id="submit" type="button" onclick="login()">Sign in</button>
+              	<p>Confirm password:</p>
+                <input id="password2" type="password" name="password2" placeholder="Confirm Password">
             </div>
             <div>
-                <a href="/forgotPassword">
-                    Forgot Password?
-                </a>
+                <button type="button" onclick="submit()">Create Account</button>
             </div>
         </main>
     </div>
 
     <script>
-		function login() {
-			let username = document.getElementById("username").value
-			let password = document.getElementById("password").value
+		function submit() {
+			let username = $("#username").val()
+			let password = $("#password").val()
+			let password2 = $("#password2").val()
+
+			let token = null
+			let params = new URLSearchParams(window.location.search)
+			if (params.has('token')) {
+				token = params.get('token')
+			}
+
+			if (password !== password2) {
+				alert("Passwords do not match!")
+				return
+			}
+
+			if (!token) {
+				alert("Invalid request token. Please check that you are using the link emailed to you.")
+				return
+			}
 			
-			$.post('/login', {username: username, password: password}, (data, statusText, xhr) => {
+			$.post('/accountAccept', {username: username, password: password, token: token}, (data, statusText, xhr) => {
 				if (xhr.status == 200) {
-					location.reload()
+					alert("Account has been created! Redirecting to login")
+					window.location.href = "/"
 				} else {
 					console.log(xhr.status)
 					console.log(statusText)
 				}
+			}).fail((res) => {
+				alert(res.responseText)
 			})
 		}
-
-		document.getElementById("password").addEventListener("keyup", (evt) => {
-			if (evt.keyCode === 13) {
-				document.getElementById("submit").click()
-			}
-		})
 	</script>
 </body>
 </html>
