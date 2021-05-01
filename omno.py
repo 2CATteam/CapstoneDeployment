@@ -32,6 +32,8 @@ def generateToken():
 			res = make_response("Logged in as admin", 200)
 			res.set_cookie("token", token)
 			res.set_cookie("admin", "True")
+			res.set_cookie("username", username)
+			res.set_cookie("email", results[0]["email"])
 			res.set_cookie("hospital_name", "Admin")
 			return res
 
@@ -46,6 +48,8 @@ def generateToken():
 			res = make_response("Logged in as user", 200)
 			res.set_cookie("token", token)
 			res.set_cookie("admin", "False")
+			res.set_cookie("email", results[0]["email"])
+			res.set_cookie("username", username)
 			res.set_cookie("hospital_id", results[0]["hospital_id"])
 			records_conn = None
 			records_conn = sqlite3.connect(data_db)
@@ -58,7 +62,7 @@ def generateToken():
 
 			return res
 
-	return jsonify(request.form), 400
+	return jsonify(request.form), 403
 
 def userCheck(token):
 	if (not token):
@@ -99,6 +103,7 @@ def createUser():
 		(sendEmail(email, "OPQIC Data Portal Invitation", f"You have been added as a user to the OPQIC data portal with the username {username}\n\nClick on the following link to create your account:\n\n{this_domain}/accountCreate?token={token}"))
 		users_conn.commit()
 		users_conn.close()
+		return "200 Success", 200
 	else:
 		return "403 Unauthorized", 403
 
@@ -146,7 +151,7 @@ def actuallySend(email, subject, message):
 		smtpObj = SMTP_SSL("mail.opqic.org", port=465)
 		smtpObj.login(env.email, env.email_pass)
 		smtpObj.sendmail("dataportal@opqic.org", email, f"From: {env.email}\r\nTo: {email}\r\nSubject: {subject}\r\n\r\n{message}")
-		print("No errors!")
+		print("No errors!!")
 		smtpObj.quit()
 	except SMTPException as e:
 		print("Error")
@@ -180,6 +185,7 @@ def accountAccept():
 		res.set_cookie("token", token)
 		res.set_cookie("admin", "True")
 		res.set_cookie("username", username)
+		res.set_cookie("email", results[0]["email"])
 		res.set_cookie("hospital_name", "Admin")
 		return res
 	print(username, token)
@@ -196,6 +202,7 @@ def accountAccept():
 		res.set_cookie("token", token)
 		res.set_cookie("admin", "False")
 		res.set_cookie("username", username)
+		res.set_cookie("email", results[0]["email"])
 		res.set_cookie("hospital_id", results[0]["hospital_id"])
 		records_conn = sqlite3.connect(data_db)
 		records_conn.row_factory = sqlite3.Row
@@ -209,10 +216,10 @@ def accountAccept():
 	res = make_response("Invalid username or token. Be sure you are using the link and username provided to you in the email.", 400)
 	return res
 
-@app.route('/adminInfo', methods=['GET'])
+@app.route('/adminInfo', methods=['POST'])
 def getUsers():
 	token = request.cookies.get("token")
-	if !adminCheck(token):
+	if not adminCheck(token):
 		return "403 Unauthorized", 403
 	toSend = {"users": [], "hospitals": []}
 	conn = sqlite3.connect(user_db)

@@ -266,6 +266,22 @@ html, body {
   justify-content: space-evenly;
 }
 
+.flexColumnFull {
+  display: flex;
+  min-height: 100%;
+  padding: 5%;
+  width: 100%;
+  flex-direction: column;
+  justify-content: start;
+  align-condent: center;
+  overflow: auto;
+}
+
+.flexColumnFull * {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
 .buttonsRow {
   display: flex;
   justify-content: space-around;
@@ -281,4 +297,25 @@ html, body {
 
 .hidden {
   display: none !important;
+}
+
+.canvasContainers {
+	display: flex;
+	width: 100%;
+	flex-direction: row;
+	overflow: auto;
+}
+
+.canvasInnerContainer {
+	width: 50%;
+}
+
+@media only screen and (max-width: 1300px) {
+	.canvasContainers {
+		flex-direction: column;
+	}
+
+	.canvasInnerContainer {
+		width: 100%;
+	}
 }

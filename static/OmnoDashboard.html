@@ -6,6 +6,7 @@
 <link href="/static/css/fontawesome.css" rel="stylesheet">
 <link href="/static/css/solid.css" rel="stylesheet">
 <link rel="stylesheet" href="/static/css/styles.css">
+<link rel="stylesheet" href="/static/css/account.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment-with-locales.min.js"></script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.bundle.min.js"></script>
@@ -52,15 +53,13 @@
   
   <div id="Search" class="tabcontent">
     <div class="opqic">
-      <img id="myImg" src="/static/icons/opqic-big.jpg" alt="Snow">
+      <img id="myImg" src="/static/icons/logo-transp.png" alt="Snow">
     </div>
     
     
     <div class="search-container">
-      <form action="/action_page.php">
-        <input type="text" placeholder="Search maternal data..." name="search">
-        <button type="submit"><i class="fa fa-search"></i></button>
-      </form>
+      <input type="text" placeholder="Search maternal data..." name="search" id="search">
+      <button type="submit"><i class="fa fa-search"></i></button>
     </div>
   
     <div id="buttonParent">
@@ -70,6 +69,7 @@
    
   
   <div id="Account" class="tabcontent">
+
 	<div class="centerChild">	
 		<div class="accountCard">
 			<div class="row">
@@ -85,22 +85,22 @@
 				<p id="accountHospital">MakeYouHealthier Co. in Tulsa</p>
 			</div>
 			<div class="row">
-				<button id="changePassword" onclick="changePassword()">Change Password</button>
-				<button id="deleteAccount" onclick="deleteAccount()">Delete my account</button>
+				<button class="createUserButton" id="changePassword" onclick="changePassword()">Change Password</button>
+				<button class="createUserButton"id="deleteAccount" onclick="deleteAccount()">Delete my account</button>
 			</div>
 		</div>
 	</div>
-	<div class="flexColumn hidden">
+	<div class="flexColumnFull hidden">
 		<div class="accountCard">
 			<h1>Manage users:</h1>
-			<p>Add user:</p>
-			<input id="usernameAdding" type="text" name="username" placeholder="User ID">
-			<input id="emailAdding" type="text" name="email" placeholder="email">
-			<label><input id="adminAdding" type="checkbox" name="isAdmin">Admin</label>
-			<select>
+			<h3>Add user:</h3>
+			<input class="inputStyle" id="usernameAdding" type="text" name="username" placeholder="User ID">
+			<input class="inputStyle" id="emailAdding" type="text" name="email" placeholder="email">
+			<label><input id="adminAdding" type="checkbox" name="isAdmin">Make Admin</label>
+			<select id="userHospitalSelect">
 				
 			</select>
-			<button id="submitNewUser" onclick="createUser()">Create new user</button>
+			<button class="createUserButton" id="submitNewUser" onclick="createUser()">Create new user</button>
 			<table id="Users">
 				<tr class="tableHead">
 					<th>Username</th>

@@ -9,24 +9,28 @@
 	"Measure_2": {
 		"title": "Percent of OENs requiring pharmacologic therapy",
 		"description": null,
-		"graphType": "A"
+		"graphType": "A",
+		"yLabel": "Percent %"
 	},
 
 	"Measure_3": {
 		"title": "Number of days of pharmacological treatment for babies with NAS",
 		"description": null,
-		"graphType": "A"
+		"graphType": "A",
+		"yLabel": "Days"
 	},
 
 	"Measure_4": {
 		"title": "Percent of OEN who had NAS symptoms",
 		"description": null,
-		"graphType": "A"
+		"graphType": "A",
+		"yLabel": "Percent %"
 	},
 	"Measure_5": {
 		"title": "Toxicology results breakdown – moms and infants",
 		"description": null,
-		"graphType": "A"
+		"graphType": "A",
+		"yLabel": "Percent %"
 	},
 	"Measure_6": {
 		"title": "Women with OUD during pregnancy with MAT/BHT",
@@ -36,57 +40,68 @@
 	"Measure_7": {
 		"title": "Percent with DHS contacted",
 		"description": null,
-		"graphType": "A"
+		"graphType": "A",
+		"yLabel": "Percent %"
 	},
 	"Measure_8": {
 		"title": "Percent who roomed together with mother - any",
 		"description": "Percent of OEN who roomed together with mother for ANY length of time during hospitalization",
-		"graphType": "A"
+		"graphType": "A",
+		"yLabel": "Percent %"
 	},
 	"Measure_9": {
 		"title": "Percent who roomed together with mother - 50%",
 		"description": "Percent of OEN who roomed together with mother during at least 50% of hospitalization",
-		"graphType": "A"
+		"graphType": "A",
+		"yLabel": "Percent %"
 	},
 	"Measure_10": {
 		"title": "Percent receiving mother's milk at discharge",
 		"description": null,
-		"graphType": "A"
+		"graphType": "A",
+		"yLabel": "Percent %"
 	},
 	"Measure_11": {
 		"title": "Percent of OEN who go home to biological mother",
 		"description": null,
-		"graphType": "A"
+		"graphType": "A",
+		"yLabel": "Percent %"
 	},
 	"Measure_12": {
 		"title": "Percent of with appropriate follow-up at discharge (Early intervention)",
 		"description": null,
-		"graphType": "A"
+		"graphType": "A",
+		"yLabel": "Percent %"
 	},
 	"Measure_13": {
 		"title": "Percent with PCP identified at follow-up",
 		"description": "Percent of OEN who had PCP Identified with a follow-up appointment at discharge",
-		"graphType": "A"
+		"graphType": "A",
+		"yLabel": "Percent %"
 	},
 	"Measure_14": {
 		"title": "Percent of infants tested for Hep. C",
 		"description": null,
-		"graphType": "A"
+		"graphType": "A",
+		"yLabel": "Percent %"
 	},
 	"Measure_15": {
 		"title": "Percent screened for STI during pregnancy",
 		"description": "Percent of pregnant women with OUD screened for STI during pregnancy",
-		"graphType": "A"
+		"graphType": "A",
+		"yLabel": "Percent %"
 	},
 	"Measure_16": {
 		"title": "Percent receiving prenatal pediatric consult",
 		"description": "Percent of mothers with OUD receiving prenatal pediatric consult",
-		"graphType": "A"
+		"graphType": "A",
+		"yLabel": "Percent %"
 	},
 	"Measure_17": {
 		"title": "Calculated MME",
 		"description": null,
-		"graphType": "A"
+		"graphType": "A",
+		"yLabel": "Percent %"
 	},
 	"Measure_18": {
 		"title": "First line medication used",

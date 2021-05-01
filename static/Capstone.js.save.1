@@ -274,7 +274,7 @@ function rebuildGraphs() {
 		}
 		let el = $(`#buttonParent .panel:nth-child(${l * 2})`)
 		el.find(".canvas2").data("graph").destroy()
-		let newPlot = BuildBar(roundList(data[toShow][i.toLowerCase()], 3), "Hospitals", el.find(".canvas2"), measures[i].yLabel, 8)
+		let newPlot = BuildBar(roundList(data[toShow][i.toLowerCase()], 3), "Hospitals", el.find(".canvas2"),"Hello"/* measures[i].yLabel, 8)
 		el.find(".canvas2").data("graph", newPlot)
 	}
 }
